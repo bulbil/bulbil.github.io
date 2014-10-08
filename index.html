@@ -4,12 +4,36 @@
 
 <body>
 <xmp theme="simplex" style="display: none;">
-## section 1
+## What is it to save a document?
 
-- list
-- list
+The interface and its predominant metaphors (page, file, folder, desktop, etc.) encapsulate and describe machine processes for human ends. They are certainly tied up in the economic and military histories of digital computing, in a certain sense culminating in Engelbart's 1968 "Mother of All Demos". You might even recognize earlier threads -- new geographically and temporally sprawling organizations attempting to operate at unprecedented scales.
 
-## section 2
+How do these references to physical practices map on to the steps actually taken by the machine? When any step can be replaced by an intermediary abstracted process, what work happens when you try to figure out what is "actually" happening? 
+
+## Git as an alternate imagining of interacting with data, with text.
+
+### The basics:
+
+#### initialize the repository
+`git init`
+
+#### adding files / staging changes
+`git add [filename]`
+
+#### commiting changes
+`git commit -m "[commit message}"`
+
+### Dealing with the repository:
+
+#### set the address of the remote repository
+`git remote add origin https://github.com/[user]/[repo].git`
+
+#### push your changes to the repository
+`git push -u origin master`
+
+#### merge changes on the remote side (i.e., made by others)
+`git pull origin master`
+
 </xmp>
 <script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>
 </html>
