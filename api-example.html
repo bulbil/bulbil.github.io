@@ -25,7 +25,7 @@ $(function(){
 
 	$.ajax({
 		type: 'GET'
-		url: endpoint,
+		url: "http://gis.phila.gov/ArcGIS/rest/services/PhilaGov/Police_Incidents_Last30/MapServer/0/query",
 		data: args,
 
 	}).done(function(d){
