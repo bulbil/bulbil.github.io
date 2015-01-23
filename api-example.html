@@ -6,7 +6,7 @@
 </head>
 <body>
 	
-
+change me!
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
 <script type="text/javascript">
 
@@ -29,8 +29,9 @@ $(function(){
 		data: args
 
 	}).done(function(d){
-
-		console.log(d);
+    console.log('fire');
+		d = eval('(' + d + ')');
+    for(i in d) { console.log(i); }
 
 	});
 });
