@@ -4,31 +4,76 @@
 
 <body>
 <xmp theme="readable" style="display: none;">
-##2015 TriCo Hackathon
-####Jan 23-25, Haverford College
+#2015 TriCo Hackathon
+###Jan 23-25, Haverford College
 
-###API Basics
+##API Basics
 
-What is an API?
+###What is an API?
 
-Making queries
+###Making queries
 
-jQuery / cURL
- 
+* ## jQuery 
+
+*Asynchronous* JavaScript And XML ($.ajax) is an extremely useful jQuery helper function -- a wrapper on JavaScript's XMLHttpRequest.
+
+A couple things, however, to remember:
+* It's asynchronous! So you need to be explicit about callback functions using `success`, `done` or `deferred` + `promise`.
+* Depending on the API, you may need to use the flag `jsonp` to avoid cross-site scripting errors.
+* Be prepared for what you're about to get back ...
+
+```
+$.ajax({
+    type: 'GET',
+    url: url,
+    async: true,
+    data: {
+        "sourceResource.description": "kittens",
+        "sourceResource.temporal.begin": "1888-1-01",
+        "fields": "sourceResource.title,sourceResource.description,sourceResource.date",
+        "api_key": [YOUR API KEY HERE]  
+    },  
+    dataType: 'jsonp',
+    success: function(d) { [YOUR AWESOME FUNCTION] },
+    error: function(e) { console.log(e.message); }
+});
+``` 
+
+* ##Python + requests
+
+```
+import requests
+import pprint
+
+args = { 
+    "sourceResource.description": "kittens",
+    "fields": "sourceResource.title,sourceResource.description,sourceResource.date",
+    "api_key": [YOUR API KEY] 
+    }   
+
+response = requests.get("http://api.dp.la/v2/items", params=args)
+
+data = response.json()
+
+for doc in data["docs"]:
+   pprint.pprint(doc)
+
+```
+
+RESOURCES:
+* [This is a link](http://dev-trico-cc.haverford.edu/) to the brand new course guide API that was developed specifically for this weekend. For the time being, limited to Haverford IP addresses.
+* [ProgrammableWeb](http://www.programmableweb.com/) is probably the largest API directory around, the downside being some of the info can be out of date.
+
 
 TUTORIALS:
-[Codeacademy's Python API Introduction (basically how to use urllib2)](http://www.codecademy.com/en/tracks/apis-python)
-[A Codular tutorial for PHP's cURL library](http://codular.com/curl-with-php)
+* [Codeacademy's Python API Introduction (basically how to use urllib2)](http://www.codecademy.com/en/tracks/apis-python)
+* [A Codular tutorial for PHP's cURL library](http://codular.com/curl-with-php)
 
 
-###Free Development Tools
+##Free Development Tools
 
 There are many, *many* cloud based services with free tiers to get apps off the ground. The following are few popular options chosen largely because of the support and user community available -- by no means exhaustive or objective for that matter.
 
-* [Firebase](https://www.firebase.com)
-    This service offers a data store and realtime data syncing through an API -- basically like cheating, no need for a back end at all really. Particularly useful for saving you from data headaches if you are building a mobile app.
-    * TUTORIALS:
-        [This tutorial](https://www.firebase.com/tutorial/#gettingstarted) should help get you started.
 * [Amazon Web Service](http://aws.amazon.com/free/?nc2=h_ql)
     Their free tier offers enough processing and storage to get started with your very own virtual private server. A bit more work and in exchange you get complete control over your server environment. 
     * TUTORIALS:
@@ -38,6 +83,10 @@ There are many, *many* cloud based services with free tiers to get apps off the 
     Somewhere in between the all-in-one service like Firebase and the DIY ethos of AWS. Also offers a bare bones free tier service, a little less generous than AWS, but should be plenty for most web and mobile apps out of the gate. People are particularly into its Git integration.
     * TUTORIALS:
         [Heroku's guides](https://devcenter.heroku.com/start) on how to get started in a number of languages
+* [Firebase](https://www.firebase.com)
+    This service offers a data store and realtime data syncing through an API -- basically like cheating, no need for a back end at all really. Particularly useful for saving you from data headaches if you are building a mobile app.
+    * TUTORIALS:
+        [This tutorial](https://www.firebase.com/tutorial/#gettingstarted) should help get you started.
 
 If you claim your [GitHub Student Developer Pack](https://education.github.com/pack)(which you definitely should) you can claim free access to a number of very cool tools that could be immensely helpful, for example:
 
