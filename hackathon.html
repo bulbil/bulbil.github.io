@@ -13,13 +13,15 @@
 
 ###Making queries
 
-* ## jQuery 
+### jQuery 
 
 *Asynchronous* JavaScript And XML ($.ajax) is an extremely useful jQuery helper function -- a wrapper on JavaScript's XMLHttpRequest.
 
 A couple things, however, to remember:
 * It's asynchronous! So you need to be explicit about callback functions using `success`, `done` or `deferred` + `promise`.
+
 * Depending on the API, you may need to use the flag `jsonp` to avoid cross-site scripting errors.
+
 * Be prepared for what you're about to get back ...
 
 ```
@@ -39,7 +41,9 @@ $.ajax({
 });
 ``` 
 
-* ##Python + requests
+###Python + requests
+
+There are several libraries that handle http requests -- for most purposes the popular library Requests is a pretty good place to start.
 
 ```
 import requests
@@ -62,13 +66,18 @@ for doc in data["docs"]:
 
 RESOURCES:
 * [This is a link](http://dev-trico-cc.haverford.edu/) to the brand new course guide API that was developed specifically for this weekend. For the time being, limited to Haverford IP addresses.
+
 * [ProgrammableWeb](http://www.programmableweb.com/) is probably the largest API directory around, the downside being some of the info can be out of date.
+
+* [PHLAPI](http://phlapi.com/index.html) is a great resource for Philly related data, including crime incidents.
 
 
 TUTORIALS:
 * [Codeacademy's Python API Introduction (basically how to use urllib2)](http://www.codecademy.com/en/tracks/apis-python)
+
 * [A Codular tutorial for PHP's cURL library](http://codular.com/curl-with-php)
 
+* [jQuery's tutorial on Ajax](http://learn.jquery.com/ajax/) gives a great overview
 
 ##Free Development Tools
 

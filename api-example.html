@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script type="text/javascript">
+
+$(function{
+
+	var baseURL = "http://gis.phila.gov/ArcGIS/rest/services/PhilaGov/Police_Incidents_Last30/MapServer/0/query";
+
+	args = {
+		"where" : "SECTOR='3'+AND+UCR_GENERAL='500'",
+		"UCR_GENERAL%3D%27500%27",
+		"returnCountOnly" : false,
+		"returnIdsOnly" : false,
+		"returnGeometry" : true,
+		"outFields" : "*",
+		"f" : "pjson"
+	};
+
+	$.ajax({
+		type: 'GET'
+		url: baseURL,
+		data: args,
+
+	}).done(function(d){
+
+		console.log(d);
+
+	});
+});
+	
+
+</script>
+
+</body>
+</html>
