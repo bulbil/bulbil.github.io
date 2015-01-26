@@ -8,7 +8,7 @@ This chunk is to fix Bootstrap so that the Markdown output looks good
 body {
   padding-top: 60px;
   padding-bottom: 40px;
-  font-size: 15px;
+  font-size: 18px;
   line-height: 150%;
 }
 
@@ -44,12 +44,8 @@ Added by bulbil@github
 
 div#headline{
   background-color: #00A388;
-  bottom-border: 1px solid #FF6138;
+  border-bottom: 1px solid #FF6138;
   padding: 5px;
-}
-
-body{
-  font-size: 14px !important;
 }
 
 /*******************************************************************
