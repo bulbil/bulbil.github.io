@@ -44,7 +44,8 @@ Added by bulbil@github
 
 div#headline{
   background-color: #00A388;
-  bottom-border: #FF6138;
+  bottom-border: 1px solid #FF6138;
+  padding: 5px;
 }
 
 body{
