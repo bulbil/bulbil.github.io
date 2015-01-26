@@ -38,6 +38,21 @@ img {
 
 /*******************************************************************
 
+Added by bulbil@github
+
+*******************************************************************/
+
+div#headline{
+  background-color: #00A388;
+  bottom-border: #FF6138;
+}
+
+body{
+  font-size: 14px !important;
+}
+
+/*******************************************************************
+
 This chunk is for Google's Code Prettify:
 http://google-code-prettify.googlecode.com
 
