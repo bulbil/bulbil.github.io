@@ -44,10 +44,11 @@ Added by bulbil@github
 
 div.navbar-fixed-top{
   background-color: #79BD8F;
+  border-bottom: 1px solid #FF6138;  
 }
 
 div#headline{
-  border-bottom: 1px solid #FF6138;  
+  border-bottom: 1px solid #FFFF9D;
 }
 
 /*******************************************************************
